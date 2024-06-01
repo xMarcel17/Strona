@@ -1,6 +1,6 @@
 # CHOINKOMAT
 
-![Choinkomat Logo](images/image.png)
+![Choinkomat Logo](images/logo.png)
 
 ## Table of Contents
 - [Version History](#version-history)
