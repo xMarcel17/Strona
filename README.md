@@ -1,5 +1,7 @@
 # CHOINKOMAT
 
+![Choinkomat Logo](images/image.png)
+
 ## Table of Contents
 - [Version History](#version-history)
 - [General Information](#general-information)
