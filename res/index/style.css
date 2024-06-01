@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 15px;
+    color: white;
+}
+
+.navbar .left, .navbar .right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .left img {
+    height: 60px; /* Powiększenie logo */
+    margin-right: 15px;
+}
+
+.navbar .left span {
+    font-size: 28px; /* Powiększenie nazwy */
+    font-weight: bold;
+}
+
+.navbar .right img {
+    height: 50px; /* Powiększenie zdjęcia profilowego */
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+    border: 2px solid white; /* Dodanie białej ramki */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Opcjonalny cień dla lepszego efektu */
+}
+
+.navbar .right span {
+    margin-left: 15px;
+}
+
+.navbar .middle {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .middle a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; /* Powiększenie tekstu linków */
+    padding: 0 15px; /* Dodanie marginesów wewnętrznych */
+}
+
+.navbar .divider {
+    width: 2px;
+    height: 30px;
+    background-color: #b6eeb6; /* Jasnozielona kreska */
+    margin: 0 10px;
+}
