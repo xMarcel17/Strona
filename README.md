@@ -1,7 +1,7 @@
 <h1 align="center">CHOINKOMAT</h1>
 
 <p align="center">
-  <img src="images/logo.png">
+  <img src="res/readmeImages/Logo.png">
 </p>
 
 ## Table of Contents
@@ -77,7 +77,7 @@ The online purchasing process consists of several stages, starting from registra
 
 ## Context Diagram
 
-![Context Diagram](images/context_diagram.png)
+![Context Diagram](res/readmeImages/Context_diagram.png)
 
 ---
 
