@@ -74,7 +74,8 @@ The online purchasing process consists of several stages, starting from registra
 - **NFR03**: The system must be optimized for use on various mobile and desktop devices.
 
 ## Context Diagram
-*(Include the context diagram here)*
+
+![Context Diagram](images/context_diagram.png)
 
 ---
 
