@@ -1,7 +1,7 @@
 <h1 align="center">CHOINKOMAT</h1>
 
 <p align="center">
-  <img src="logo.png" alt="Choinkomat Logo"/>
+  <img src="images/logo.png">
 </p>
 
 ## Table of Contents
