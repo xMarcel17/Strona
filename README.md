@@ -1,6 +1,8 @@
-# CHOINKOMAT
+<h1 align="center">CHOINKOMAT</h1>
 
-![Choinkomat Logo](images/logo.png)
+<p align="center">
+  <img src="image.png" alt="Choinkomat Logo"/>
+</p>
 
 ## Table of Contents
 - [Version History](#version-history)
