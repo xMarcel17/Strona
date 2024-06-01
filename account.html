@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil użytkownika - Choinkomat</title>
     <link rel="stylesheet" href="res/account/style.css">
+    <link rel="icon" href="res/navbar/Logo.png" type="image/png">
 </head>
 <body>
     <div class="navbar">
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-            <div class="left">
-                <img src="res/navbar/Logo.png" alt="Logo">
-                <span>Choinkomat</span>
-            </div>
-        </a>
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="left">
+            <img src="res/navbar/Logo.png" alt="Logo">
+            <span>Choinkomat</span>
+        </div>
+      </a>
       <div class="middle">
           <a href="#">Forum</a>
           <div class="divider"></div>
@@ -34,25 +35,50 @@
     <div class="container">
         <div class="profile">
             <div class="profile-header">
-                <img src="res/navbar/ZdjecieProfilowe.png" alt="Profile Picture" class="profile-pic">
-                <h1>Jan Kowalski</h1>
-                <p class="rank">Ranga: początkujący</p>
-                <p class="ranking">Pozycja w rankingu:</p>
+                <img src="res/navbar/ZdjecieProfilowe.png" alt="Profile Picture" class="profile-pic" id="profilePic">
+                <h1 id="fullName">Jan Kowalski</h1>
+                <p class="rank" id="rank">Ranga: początkujący</p>
+                <p class="ranking" id="ranking">Pozycja w rankingu:</p>
                 <button class="edit-button" onclick="editProfile()">Edytuj profil</button>
             </div>
             <div class="user-details">
                 <h2>Dane użytkownika</h2>
-                <p><strong>Imię:</strong> Jan</p>
-                <p><strong>Nazwisko:</strong> Kowalski</p>
-                <p><strong>Nazwa użytkownika:</strong> kochamChoinki7349</p>
-                <p><strong>Adres email:</strong> j.kowalski7349@gmail.com</p>
-                <p><strong>Nr telefonu:</strong> 52******</p>
-                <p><strong>Dane karty:</strong> 1234************23</p>
-                <p><strong>Adres korespondencyjny:</strong> ul. Grottgera 24/6</p>
-                <p><strong>Adres:</strong> ul. Grottgera 24/6</p>
+                <p><strong>Imię:</strong> <span id="firstName">Jan</span></p>
+                <p><strong>Nazwisko:</strong> <span id="lastName">Kowalski</span></p>
+                <p><strong>Nazwa użytkownika:</strong> <span id="username">kochamChoinki7349</span></p>
+                <p><strong>Adres email:</strong> <span id="email">j.kowalski7349@gmail.com</span></p>
+                <p><strong>Nr telefonu:</strong> <span id="phone">52******</span></p>
+                <p><strong>Dane karty:</strong> <span id="card">1234************23</span></p>
+                <p><strong>Adres korespondencyjny:</strong> <span id="address">ul. Grottgera 24/6</span></p>
+                <p><strong>Adres:</strong> <span id="address">ul. Grottgera 24/6</span></p>
             </div>
         </div>
     </div>
+
+        <!-- Modal for Editing Profile -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Edytuj Profil</h2>
+                <form id="editForm">
+                    <label for="editFirstName">Imię:</label>
+                    <input type="text" id="editFirstName" name="firstName" required>
+                    <label for="editLastName">Nazwisko:</label>
+                    <input type="text" id="editLastName" name="lastName" required>
+                    <label for="editUsername">Nazwa użytkownika:</label>
+                    <input type="text" id="editUsername" name="username" required>
+                    <label for="editEmail">Adres email:</label>
+                    <input type="email" id="editEmail" name="email" required>
+                    <label for="editPhone">Nr telefonu:</label>
+                    <input type="text" id="editPhone" name="phone" required>
+                    <label for="editCard">Dane karty:</label>
+                    <input type="text" id="editCard" name="card" required>
+                    <label for="editAddress">Adres:</label>
+                    <input type="text" id="editAddress" name="address" required>
+                    <button type="submit">Zapisz</button>
+                </form>
+            </div>
+        </div>
     <script src="res/account/scripts.js"></script>
 </body>
 </html>
