@@ -24,6 +24,7 @@ function loadProfileData() {
   document.getElementById('firstName').textContent = profileData.firstName;
   document.getElementById('lastName').textContent = profileData.lastName;
   document.getElementById('username').textContent = profileData.username;
+  document.getElementById('username').textContent = profileData.username;
   document.getElementById('email').textContent = profileData.email;
   document.getElementById('phone').textContent = profileData.phone;
   document.getElementById('card').textContent = profileData.card;
