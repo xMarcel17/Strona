@@ -1,6 +1,6 @@
 // Funkcja do ładowania danych profilu z localStorage
 function loadProfileData() {
-  const profileData = JSON.parse(localStorage.getItem('profileData')) || {
+  profileData = JSON.parse(localStorage.getItem('profileData')) || {
       firstName: 'Jan',
       lastName: 'Kowalski',
       username: 'kochamChoinki7349',
@@ -12,6 +12,15 @@ function loadProfileData() {
 
   // Aktualizacja danych w navbarze
   document.getElementById('nav_username').textContent = profileData.username;
+
+  document.getElementById('editFirstName').value = profileData.firstName;
+  document.getElementById('editLastName').value = profileData.lastName;
+  document.getElementById('editUsername').value = profileData.username;
+  document.getElementById('editEmail').value = profileData.email;
+  document.getElementById('editPhone').value = profileData.phone;
+  document.getElementById('editCard').value = profileData.card;
+  document.getElementById('editAddress').value = profileData.address;
+
 }
 
 // Funkcja do zapisywania danych profilu do localStorage
@@ -33,3 +42,4 @@ function saveProfileData() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProfileData();
 });
+
