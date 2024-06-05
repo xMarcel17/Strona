@@ -33,3 +33,43 @@ function saveProfileData() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProfileData();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const isLoggedIn = checkLoginStatus();
+
+  if (!isLoggedIn) {
+    window.location.href = 'login.html'; // Przekieruj na stronę logowania, jeśli użytkownik nie jest zalogowany
+  } else {
+    loadProfileData();
+  }
+
+  const form = document.getElementById('editForm');
+  form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      saveProfileData();
+      closeModal();
+      loadProfileData();
+  });
+
+  document.getElementById('logout-button').addEventListener('click', () => {
+    logoutUser();
+  });
+});
+
+function checkLoginStatus() {
+  // Sprawdź, czy istnieje token lub inny wskaźnik zalogowania użytkownika
+  return localStorage.getItem('loggedIn') === 'true';
+}
+
+function login(username, password) {
+  // Tutaj można dodać logikę sprawdzania loginu i hasła, np. wywołując zapytanie do serwera
+  // Po poprawnym uwierzytelnieniu użytkownika ustaw flagę loggedIn na true w localStorage
+  localStorage.setItem('loggedIn', 'true');
+}
+
+function logoutUser() {
+  // Wyloguj użytkownika poprzez usunięcie flagi loggedIn z localStorage
+  localStorage.removeItem('loggedIn');
+  // Przekieruj użytkownika na stronę logowania
+  window.location.href = 'login.html';
+}

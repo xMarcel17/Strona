@@ -60,3 +60,17 @@ body {
     background-color: #b6eeb6; /* Jasnozielona kreska */
     margin: 0 10px;
 }
+
+#logout-button {
+    padding: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#logout-button:hover {
+    background-color: #c82333;
+}

@@ -1,3 +1,4 @@
+/* Resetowanie stylów domyślnych */
 body {
   font-family: Arial, sans-serif;
   background-color: #f0f8ff;
@@ -5,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* Styl dla navbaru */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,7 +16,8 @@ body {
   color: white;
 }
 
-.navbar .left, .navbar .right {
+.navbar .left,
+.navbar .right {
   display: flex;
   align-items: center;
 }
@@ -61,107 +64,111 @@ body {
   margin: 0 10px;
 }
 
-
-/* Dodajemy poniższe do istniejącego pliku style.css */
-.contact-header {
-  background-color: #5CAF55;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border: #ACAF50;
-}
-
-.contact-details {
-  padding: 20px;
+/* Container */
+.forum-container {
+  padding: 25px;
   background-color: #e0f7fa;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  width: 600px;
+  overflow: hidden;
+  margin: 20px auto;
 }
 
-.contact-details h2 {
-  color: #004d40;
+/* Forum Threads */
+.thread-item {
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
-.contact-details p {
-  margin: 10px 0;
-}
-
-.contact-details a {
-  color: #00796b;
+.thread-item a {
+  color: #333;
   text-decoration: none;
+  font-size: 18px;
 }
 
-.contact-details a:hover {
-  text-decoration: underline;
+.thread-item a:hover {
+  text-decoration: underline; /* Podkreślenie linku przy najechaniu kursorem */
 }
 
-.contact-actions {
-  text-align: center;
-  margin: 20px;
-}
-
-.contact-actions button {
-  background-color: #004d40;
+.thread-item button {
+  background-color: #f44336;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
+  margin-left: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-.contact-actions button:hover {
-  background-color: #00251a;
+.thread-item button:hover {
+  background-color: #d32f2f;
 }
 
-.contact-form {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Thread Title */
+.thread-title {
+  background-color: #4CAF50;
+  color: white;
   padding: 20px;
-  margin: 20px;
+  text-align: center;
 }
 
-.contact-form h2 {
-  margin-bottom: 20px;
-  color: #004d40;
+/* Forum Posts */
+.post-item {
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
-.contact-form .form-group {
-  margin-bottom: 20px;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.post-item p {
+  color: #333;
   font-size: 16px;
 }
 
-.contact-form textarea {
-  resize: vertical;
-}
-
-.contact-form button[type="submit"] {
-  background-color: #004d40;
+.post-item button {
+  background-color: #f44336;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 16px;
+  margin-left: 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-.contact-form button[type="submit"]:hover {
-  background-color: #00251a;
+.post-item button:hover {
+  background-color: #d32f2f;
+}
+
+/* Add Thread Button */
+button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #004d40;
+}
+
+.thread-author {
+  font-style: italic;
+}
+
+.thread-date {
+  color: #888;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-date {
+  color: #777;
 }
 
 #logout-button {
@@ -172,6 +179,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-left: 10px;
+  margin-top: 0px;
 }
 
 #logout-button:hover {
