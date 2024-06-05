@@ -1,0 +1,165 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4CAF50;
+  padding: 15px;
+  color: white;
+}
+
+.navbar .left, .navbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .left img {
+  height: 60px; /* Powiększenie logo */
+  margin-right: 15px;
+}
+
+.navbar .left span {
+  font-size: 28px; /* Powiększenie nazwy */
+  font-weight: bold;
+}
+
+.navbar .right img {
+  height: 50px; /* Powiększenie zdjęcia profilowego */
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 15px;
+  border: 2px solid white; /* Dodanie białej ramki */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Opcjonalny cień dla lepszego efektu */
+}
+
+.navbar .right span {
+  margin-left: 15px;
+}
+
+.navbar .middle {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .middle a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px; /* Powiększenie tekstu linków */
+  padding: 0 15px; /* Dodanie marginesów wewnętrznych */
+}
+
+.navbar .divider {
+  width: 2px;
+  height: 30px;
+  background-color: #b6eeb6; /* Jasnozielona kreska */
+  margin: 0 10px;
+}
+
+
+/* Dodajemy poniższe do istniejącego pliku style.css */
+.contact-header {
+  background-color: #5CAF55;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border: #ACAF50;
+}
+
+.contact-details {
+  padding: 20px;
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.contact-details h2 {
+  color: #004d40;
+}
+
+.contact-details p {
+  margin: 10px 0;
+}
+
+.contact-details a {
+  color: #00796b;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-actions {
+  text-align: center;
+  margin: 20px;
+}
+
+.contact-actions button {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact-actions button:hover {
+  background-color: #00251a;
+}
+
+.contact-form {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  color: #004d40;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #00251a;
+}
