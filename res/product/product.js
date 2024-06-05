@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
                             }
                             // Jeśli aktualizacja na serwerze zakończyła się sukcesem, usuwamy produkt z listy
                             products.splice(productIndex, 1);
-                            alert("Produkt został zakupiony.");
                             paymentDialog.style.display = "none";
                             window.location.href = "shop.html";
                         })
