@@ -9,28 +9,27 @@
 </head>
 <body>
     <div class="navbar">
-      <a href="index.html" style="text-decoration: none; color: inherit;">
-        <div class="left">
-            <img src="res/navbar/Logo.png" alt="Logo">
-            <span>Choinkomat</span>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="left">
+                <img src="res/navbar/Logo.png" alt="Logo">
+                <span>Choinkomat</span>
+            </div>
+        </a>
+        <div class="middle">
+            <a href="forum/forum.html">Forum</a>
+            <div class="divider"></div>
+            <a href="shop.html">Sklep</a>
+            <div class="divider"></div>
+            <a href="#">Punkty</a>
+            <div class="divider"></div>
+            <a href="contact.html">Kontakt</a>
         </div>
-      </a>
-      <div class="middle">
-          <a href="forum/forum.html">Forum</a>
-          <div class="divider"></div>
-          <a href="shop.html">Sklep</a>
-          <div class="divider"></div>
-          <a href="#">Punkty</a>
-          <div class="divider"></div>
-          <a href="contact.html">Kontakt</a>
-      </div>
-      <a href="?" style="text-decoration: none; color: inherit;">
-          <div class="right" href="#">
+        <div class="right">
             <span id="nav_username">LeBron Jamse</span>
             <img src="res/navbar/ZdjecieProfilowe.png" alt="Profilowe">
+            <button id="logout-button">Wyloguj</button> <!-- Dodaj przycisk wylogowywania -->
         </div>
-      </a>
-  </div>
+    </div>
 
     <div class="container">
         <div class="profile">
@@ -54,30 +53,31 @@
         </div>
     </div>
 
-        <!-- Modal for Editing Profile -->
-        <div id="editModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Edytuj Profil</h2>
-                <form id="editForm">
-                    <label for="editFirstName">Imię:</label>
-                    <input type="text" id="editFirstName" name="firstName" required>
-                    <label for="editLastName">Nazwisko:</label>
-                    <input type="text" id="editLastName" name="lastName" required>
-                    <label for="editUsername">Nazwa użytkownika:</label>
-                    <input type="text" id="editUsername" name="username" required>
-                    <label for="editEmail">Adres email:</label>
-                    <input type="email" id="editEmail" name="email" required>
-                    <label for="editPhone">Nr telefonu:</label>
-                    <input type="text" id="editPhone" name="phone" required>
-                    <label for="editCard">Dane karty:</label>
-                    <input type="text" id="editCard" name="card" required>
-                    <label for="editAddress">Adres:</label>
-                    <input type="text" id="editAddress" name="address" required>
-                    <button type="submit">Zapisz</button>
-                </form>
-            </div>
+    <!-- Modal for Editing Profile -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edytuj Profil</h2>
+            <form id="editForm">
+                <label for="editFirstName">Imię:</label>
+                <input type="text" id="editFirstName" name="firstName" required>
+                <label for="editLastName">Nazwisko:</label>
+                <input type="text" id="editLastName" name="lastName" required>
+                <label for="editUsername">Nazwa użytkownika:</label>
+                <input type="text" id="editUsername" name="username" required>
+                <label for="editEmail">Adres email:</label>
+                <input type="email" id="editEmail" name="email" required>
+                <label for="editPhone">Nr telefonu:</label>
+                <input type="text" id="editPhone" name="phone" required>
+                <label for="editCard">Dane karty:</label>
+                <input type="text" id="editCard" name="card" required>
+                <label for="editAddress">Adres:</label>
+                <input type="text" id="editAddress" name="address" required>
+                <button type="submit">Zapisz</button>
+            </form>
         </div>
+    </div>
+
     <script src="res/account/scripts.js"></script>
 </body>
 </html>
