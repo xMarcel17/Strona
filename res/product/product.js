@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
     let products = [];
     
@@ -94,10 +95,29 @@ document.addEventListener("DOMContentLoaded", function() {
                 confirmPurchaseButton.onclick = function() {
                     const productIndex = products.findIndex(item => item.id === product.id);
                     if (productIndex > -1) {
-                        products.splice(productIndex, 1);
-                        alert("Produkt został zakupiony.");
-                        paymentDialog.style.display = "none";
-                        window.location.href = "shop.html";
+                        // Tworzymy kopię listy produktów, aby nie zmieniać oryginalnej listy do momentu potwierdzenia aktualizacji na serwerze
+                        const updatedProducts = products.slice();
+                        updatedProducts.splice(productIndex, 1);
+                        
+                        // Wysyłamy żądanie POST na serwer backendowy z zaktualizowaną listą produktów
+                        fetch('http://localhost:3000/updateProducts', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(updatedProducts)
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Błąd podczas aktualizacji pliku JSON');
+                            }
+                            // Jeśli aktualizacja na serwerze zakończyła się sukcesem, usuwamy produkt z listy
+                            products.splice(productIndex, 1);
+                            alert("Produkt został zakupiony.");
+                            paymentDialog.style.display = "none";
+                            window.location.href = "shop.html";
+                        })
+                        .catch(error => console.error(error));
                     }
                 };
 
@@ -122,5 +142,22 @@ document.addEventListener("DOMContentLoaded", function() {
         const queryString = url.split('?')[1];
         const params = new URLSearchParams(queryString);
         return params.get('productId');
+    }
+
+    function saveProductsToFile(products) {
+        fetch('/updateProducts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(products)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Błąd podczas aktualizacji pliku JSON');
+            }
+            console.log('Plik products.json został zaktualizowany na serwerze');
+        })
+        .catch(error => console.error(error));
     }
 });
