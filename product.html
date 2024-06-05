@@ -64,6 +64,17 @@
         </div>
     </main>
 
+    <!-- Okno dialogowe -->
+    <div id="paymentDialog" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Informacje o Płatności</h2>
+            <p>Kwota do zapłaty: <span id="paymentAmount"></span></p>
+            <button id="confirmPurchaseButton">Zamawiam z obowiązkiem zapłaty</button>
+            <button id="cancelButton">Anuluj</button>
+        </div>
+    </div>
+
     <script src="res/shop/scripts.js"></script>
     <script src="res/product/product.js"></script>
 </body>
