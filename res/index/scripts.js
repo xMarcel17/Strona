@@ -34,42 +34,35 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProfileData();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const isLoggedIn = checkLoginStatus();
+// Funkcje do przewijania banerów
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
 
-  if (!isLoggedIn) {
-    window.location.href = 'login.html'; // Przekieruj na stronę logowania, jeśli użytkownik nie jest zalogowany
-  } else {
-    loadProfileData();
-  }
+let currentIndex = 1; // Początkowy indeks banera
 
-  const form = document.getElementById('editForm');
-  form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      saveProfileData();
-      closeModal();
-      loadProfileData();
+function updateSlides() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+  slides.forEach((slide, index) => {
+      if (index === currentIndex) {
+          slide.style.opacity = '1';
+      } else {
+          slide.style.opacity = '0.5';
+      }
   });
+}
 
-  document.getElementById('logout-button').addEventListener('click', () => {
-    logoutUser();
-  });
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlides();
 });
 
-function checkLoginStatus() {
-  // Sprawdź, czy istnieje token lub inny wskaźnik zalogowania użytkownika
-  return localStorage.getItem('loggedIn') === 'true';
-}
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlides();
+});
 
-function login(username, password) {
-  // Tutaj można dodać logikę sprawdzania loginu i hasła, np. wywołując zapytanie do serwera
-  // Po poprawnym uwierzytelnieniu użytkownika ustaw flagę loggedIn na true w localStorage
-  localStorage.setItem('loggedIn', 'true');
-}
-
-function logoutUser() {
-  // Wyloguj użytkownika poprzez usunięcie flagi loggedIn z localStorage
-  localStorage.removeItem('loggedIn');
-  // Przekieruj użytkownika na stronę logowania
-  window.location.href = 'login.html';
-}
+updateSlides();

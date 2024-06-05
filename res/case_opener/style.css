@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 15px;
+    color: white;
+}
+
+.navbar .left, .navbar .right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .left img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.navbar .left span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar .right img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 15px;
+    border: 2px solid white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .right span {
+    margin-left: 15px;
+}
+
+.navbar .middle {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .middle a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.navbar .divider {
+    width: 2px;
+    height: 30px;
+    background-color: #b6eeb6;
+    margin: 0 10px;
+}
+
+.case-opener {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0px;
+    margin-top: 100px; /* Adjust this value to move everything higher or lower */
+    /*height: calc(100vh - 80px); /* To center align within the remaining height after navbar */
+}
+
+#openButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#openButton img {
+    width: 170px; /* Adjust this value to make the key larger or smaller */
+}
+
+#instruction {
+    font-size: 24px; /* Adjust the size of the text */
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px; /* Adjust this value to change the distance between the key and the text */
+}
+
+.hidden {
+    display: none;
+}
+
+#items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-image: url('SkrzyniaNasionRandom.png');
+    background-size: cover;
+    transition: opacity 1s;
+}
+
+.item img {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.item.flipped {
+    opacity: 0;
+}
+
+.item.flipped img {
+    display: block;
+}
+
+.item.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+#congrats {
+    margin-top: 20px;
+    font-size: 24px; /* Powiększenie tekstu */
+    text-align: center;
+}
+
+#congrats span {
+    font-style: italic; /* Kursywa dla nazwy przedmiotu */
+    font-weight: bold; /* Pogrubienie nazwy przedmiotu */
+}
+
+#chosing {
+    font-size: 24px; /* Adjust the size of the text */
+    color: white;
+    background-color: #4CAF50;
+    padding: 0px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px; /* Adjust this value to change the distance between the key and the text */
+}

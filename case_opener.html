@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choinkomat - Case Opener</title>
+    <link rel="stylesheet" href="res/case_opener/style.css">
+    <link rel="icon" href="res/navbar/Logo.png" type="image/png">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="left">
+            <img src="res/navbar/Logo.png" alt="Logo">
+            <span>Choinkomat</span>
+        </div>
+    </a>
+    <div class="middle">
+        <a href="#">Forum</a>
+        <div class="divider"></div>
+        <a href="#">Sklep</a>
+        <div class="divider"></div>
+        <a href="#">Punkty</a>
+        <div class="divider"></div>
+        <a href="#">Kontakt</a>
+    </div>
+    <a href="account.html" style="text-decoration: none; color: inherit;">
+        <div class="right">
+          <span id="nav_username">kochamChoinki7349</span>
+          <img src="res/navbar/ZdjecieProfilowe.png" alt="Profilowe">
+      </div>
+    </a>
+</div>
+
+<div class="case-opener">
+    <button id="openButton">
+        <img src="res/case_opener/Klucz.png" alt="Klucz">
+    </button>
+    <p id="instruction">Kliknij w kluczyk!</p>
+    <div id="items-container" class="hidden">
+        <div class="item-row"></div>
+        <div class="item-row"></div>
+    </div>
+    <div id="chosing" class="hidden">
+        <p>Wybierz jedną ze skrzynek powyżej!</p>
+    </div>
+    <div id="congrats" class="hidden">
+        <p><b>Gratulacje!</b> Udało ci się zdobyć powyższy przedmiot, jakim jest: <span id="item-name"></span></p>
+    </div>
+</div>
+
+<script src="res/case_opener/scripts.js"></script>
+</body>
+</html>
