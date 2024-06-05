@@ -60,3 +60,208 @@ body {
     background-color: #b6eeb6; /* Jasnozielona kreska */
     margin: 0 10px;
 }
+
+/* Nowy styl dla sekcji głównej */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+/* Styl dla sekcji "Co oferujemy?" */
+.offer-section {
+    background-color: #bfd18e;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.offer-section h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 0;
+    background-color: #8fad3b;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Styl dla sekcji "Aktualności" */
+.article-section {
+    background-color: #bfd18e;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article-section h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 0;
+    background-color: #8fad3b;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.article-section img {
+    width: 40%;
+    height: auto;
+    margin-left: 140px;
+    margin-bottom: 10px;
+}
+
+.article-section .article-content {
+    height: 150px; /* Ustalona wysokość dla treści artykułu */
+    overflow-y: scroll; /* Dodanie paska przewijania */
+}
+
+/* Styl dla karuzeli */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.carousel-slide {
+    width: 550px;
+    height: 270px;
+    transition: opacity 0.5s ease;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Styl dla sekcji "Darmowa Skrzynka" */
+.free-case-section {
+    background-color: #bfd18e;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 80%;
+}
+
+.free-case-section h2 {
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    background-color: #8fad3b;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.case-details {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.case-details h3 {
+    margin: 10px 0;
+    background-color: #8fad3b;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+.key-container {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.case-image {
+    width: 150px; /* Dostosuj rozmiar obrazu skrzyni */
+    height: auto;
+}
+
+.key-image {
+    width: 50px; /* Dostosuj rozmiar obrazu klucza */
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+.free-label {
+    width: 70px; /* Dostosuj rozmiar obrazu "Free" */
+    height: auto;
+}
+
+.limit {
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-section, .article-section {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .free-case-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .middle a {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .offer-section, .article-section {
+        width: 90%;
+    }
+
+    .free-case-section {
+        width: 90%;
+    }
+}

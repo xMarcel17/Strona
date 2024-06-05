@@ -33,3 +33,36 @@ function saveProfileData() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProfileData();
 });
+
+// Funkcje do przewijania banerów
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+let currentIndex = 1; // Początkowy indeks banera
+
+function updateSlides() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+  slides.forEach((slide, index) => {
+      if (index === currentIndex) {
+          slide.style.opacity = '1';
+      } else {
+          slide.style.opacity = '0.5';
+      }
+  });
+}
+
+nextButton.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlides();
+});
+
+prevButton.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlides();
+});
+
+updateSlides();
