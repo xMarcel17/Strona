@@ -116,3 +116,17 @@ function logoutUser() {
   // Przekieruj użytkownika na stronę logowania
   window.location.href = 'login.html';
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+  if (!isLoggedIn) {
+    window.location.href = 'login.html';
+  }
+
+  loadProfileData();
+
+  document.getElementById('logoutButton').addEventListener('click', () => {
+    logoutUser();
+  });
+});

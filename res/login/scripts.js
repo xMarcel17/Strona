@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Jeśli dane logowania są poprawne, zaloguj użytkownika
       login(username);
       // Przekieruj użytkownika na stronę swojego profilu
-      window.location.href = 'account.html';
+      window.location.href = 'index.html';
     } else {
       // Jeśli dane logowania są niepoprawne, wyświetl komunikat błędu
       alert('Niepoprawna nazwa użytkownika lub hasło. Spróbuj ponownie.');
@@ -63,3 +63,21 @@ function login(username) {
   localStorage.setItem('loggedIn', 'true');
   localStorage.setItem('username', username);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+
+  if (isLoggedIn) {
+    window.location.href = 'account.html';
+  }
+
+  const loginForm = document.getElementById('loginForm');
+  loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    login(username, password);
+  });
+});

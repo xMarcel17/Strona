@@ -79,3 +79,17 @@ button[type="submit"]:hover {
 .tree:after {
   left: calc(100% - 25px);
 }
+
+#logout-button {
+  padding: 10px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#logout-button:hover {
+  background-color: #c82333;
+}

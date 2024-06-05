@@ -30,13 +30,5 @@
     "date": "25.09.2022",
     "image": "res/shop/swierk_serbski.jpg",
     "description": "Świerk Serbski"
-  },
-  {
-    "id": 6,
-    "name": "Sosna",
-    "price": "600 PLN",
-    "date": "30.11.2022",
-    "image": "res/shop/sosna.jpg",
-    "description": "Sosna"
   }
 ]
