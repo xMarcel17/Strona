@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep Internetowy</title>
+    <link rel="stylesheet" href="res/shop/style.css">
+    <link rel="icon" href="res/navbar/Logo.png" type="image/png">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <div class="left">
+                <img src="res/navbar/Logo.png" alt="Logo">
+                <span>Choinkomat</span>
+            </div>
+        </a>
+        <div class="middle">
+            <a href="#">Forum</a>
+            <div class="divider"></div>
+            <a href="shop.html">Sklep</a>
+            <div class="divider"></div>
+            <a href="points.html">Punkty</a>
+            <div class="divider"></div>
+            <a href="contact.html">Kontakt</a>
+        </div>
+        <a href="account.html" style="text-decoration: none; color: inherit;">
+            <div class="right">
+                <span id="nav_username">LeBron Jamse</span>
+                <img src="res/navbar/ZdjecieProfilowe.png" alt="Profilowe">
+            </div>
+        </a>
+    </div>
+    <main>
+        <div class="container">
+            <header>
+                <h1>Szczegóły Produktu</h1>
+            </header>
+        
+            <div class="product-detail" id="productDetail">
+                <!-- Szczegóły produktu zostaną załadowane dynamicznie tutaj -->
+            </div>
+
+            <div class="user-info">
+                <h3>Dane Użytkownika</h3>
+                <form id="userForm">
+                    <label for="editFirstName">Imię:</label>
+                    <input type="text" id="editFirstName" name="firstName"><br>
+                    <label for="editLastName">Nazwisko:</label>
+                    <input type="text" id="editLastName" name="lastName"><br>
+                    <label for="editUsername">Nazwa użytkownika:</label>
+                    <input type="text" id="editUsername" name="username"><br>
+                    <label for="editEmail">Email:</label>
+                    <input type="email" id="editEmail" name="email"><br>
+                    <label for="editPhone">Telefon:</label>
+                    <input type="tel" id="editPhone" name="phone"><br>
+                    <label for="editCard">Karta kredytowa:</label>
+                    <input type="text" id="editCard" name="card"><br>
+                    <label for="editAddress">Adres:</label>
+                    <input type="text" id="editAddress" name="address"><br>
+                </form>
+                <button type="button" id="buyButton">Kup Teraz</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Okno dialogowe -->
+    <div id="paymentDialog" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Informacje o Płatności</h2>
+            <p>Kwota do zapłaty: <span id="paymentAmount"></span></p>
+            <button id="confirmPurchaseButton">Zamawiam z obowiązkiem zapłaty</button>
+            <button id="cancelButton">Anuluj</button>
+        </div>
+    </div>
+
+    <script src="res/shop/scripts.js"></script>
+    <script src="res/product/product.js"></script>
+</body>
+</html>

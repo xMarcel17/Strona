@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choinkomat</title>
+    <link rel="stylesheet" href="res/points/style.css">
+    <link rel="icon" href="res/navbar/Logo.png" type="image/png">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="left">
+            <img src="res/navbar/Logo.png" alt="Logo">
+            <span>Choinkomat</span>
+        </div>
+    </a>
+    <div class="middle">
+        <a href="#">Forum</a>
+        <div class="divider"></div>
+        <a href="shop.html">Sklep</a>
+        <div class="divider"></div>
+        <a href="points.html">Punkty</a>
+        <div class="divider"></div>
+        <a href="contact.html">Kontakt</a>
+    </div>
+    <a href="account.html" style="text-decoration: none; color: inherit;">
+        <div class="right">
+          <span id="nav_username">kochamChoinki7349</span>
+          <img src="res/navbar/ZdjecieProfilowe.png" alt="Profilowe">
+      </div>
+    </a>
+</div>
+
+<div class="container">
+    <div class="points">
+        <div class="points-header">
+            <img src="res/navbar/ZdjecieProfilowe.png" alt="Smiling Face" class="points-pic">
+            <h1 id="points">Punkty: <span id="points-value">0
+                <script>
+                    // Pobranie punktów z pliku JSON
+                    fetch('res/points/points.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('points').innerText = 'Ilość punktów: ' + data.points;
+                        });
+                </script>
+            </span></h1>
+        </div>
+    </div>
+</div>
+<div id="products"></div>
+
+<script>
+    // Pobranie listy produktów z pliku JSON
+    fetch('res/points/purchased_trees.json')
+    .then(response => response.json())
+    .then(data => {
+        const productsDiv = document.getElementById('products');
+        data.trees.forEach(tree => {
+            const productDiv = document.createElement('div');
+            productDiv.className = 'product';
+
+            const productImg = document.createElement('img');
+            productImg.src = tree.pic; // używamy pola 'pic' z pliku JSON jako ścieżkę do obrazu
+            productImg.alt = tree.name;
+
+            const productText = document.createElement('div');
+            productText.className = 'product-text';
+            productText.textContent = 'Data posadzenia: ' + tree.date;
+
+            productDiv.appendChild(productImg);
+            productDiv.appendChild(productText);
+            productsDiv.appendChild(productDiv); // poprawiono, żeby dodawać do productsDiv
+        });
+    });
+</script>
+<script src="res/points/scripts.js"></script>
+</body>
+</html>

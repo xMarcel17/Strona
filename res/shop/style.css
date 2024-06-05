@@ -3,116 +3,161 @@ body {
     background-color: #f0f8ff;
     margin: 0;
     padding: 0;
-  }
-  
-  .navbar {
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #4CAF50;
     padding: 15px;
     color: white;
-  }
-  
-  .navbar .left, .navbar .right {
+}
+
+.navbar .left, .navbar .right {
     display: flex;
     align-items: center;
-  }
-  
-  .navbar .left img {
+}
+
+.navbar .left img {
     height: 60px; /* Powiększenie logo */
     margin-right: 15px;
-  }
-  
-  .navbar .left span {
+}
+
+.navbar .left span {
     font-size: 28px; /* Powiększenie nazwy */
     font-weight: bold;
-  }
-  
-  .navbar .right img {
+}
+
+.navbar .right img {
     height: 50px; /* Powiększenie zdjęcia profilowego */
     width: 50px;
     border-radius: 50%;
     margin-left: 15px;
     border: 2px solid white; /* Dodanie białej ramki */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Opcjonalny cień dla lepszego efektu */
-  }
-  
-  .navbar .right span {
+}
+
+.navbar .right span {
     margin-left: 15px;
-  }
-  
-  .navbar .middle {
+}
+
+.navbar .middle {
     display: flex;
     align-items: center;
-  }
-  
-  .navbar .middle a {
+}
+
+.navbar .middle a {
     color: white;
     text-decoration: none;
     font-size: 20px; /* Powiększenie tekstu linków */
     padding: 0 15px; /* Dodanie marginesów wewnętrznych */
-  }
-  
-  .navbar .divider {
+}
+
+.navbar .divider {
     width: 2px;
     height: 30px;
     background-color: #b6eeb6; /* Jasnozielona kreska */
     margin: 0 10px;
-  }
-  
-  .container {
-    background-color: #e0f7fa;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    overflow: hidden;
-    margin: 20px auto;
-  }
-  
-  .profile-header {
-    background-color: #4CAF50;
-    color: white;
+}
+
+
+.container {
     padding: 20px;
+}
+
+header {
     text-align: center;
-  }
-  
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid white;
-    object-fit: cover;
-  }
-  
-  .edit-button {
-    background-color: #004d40;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.buy-button {
+    background-color: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
-  }
-  
-  .edit-button:hover {
-    background-color: #00251a;
-  }
-  
-  .user-details {
-    padding: 20px;
-  }
-  
-  .user-details h2 {
-    margin-top: 0;
-    color: #004d40;
-  }
-  
-  .user-details p {
-    margin: 10px 0;
-  }
+    cursor: pointer;
+    margin-top: 10px;
+}
 
-  .modal {
+.buy-button:hover {
+    background-color: #218838;
+}
+
+
+
+.product-detail {
+    margin-left: 42%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Stylizacja formularza */
+.user-info {
+    margin-top: 30px;
+}
+
+.user-info h3 {
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#buyButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#buyButton:hover {
+    background-color: #45a049;
+}
+
+#productDetail{
+    text-align: center;
+}
+/* Styl dla okna dialogowego */
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -121,61 +166,34 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
 
-  .modal-content {
+.modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-  }
+}
 
-  .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
 
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .modal-content form {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .modal-content form label {
-    margin: 10px 0 5px;
-  }
-
-  .modal-content form input {
-    padding: 8px;
-    margin-bottom: 10px;
-  }
-
-  .modal-content form button {
-    padding: 10px;
-    background-color: #00796b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .modal-content form button:hover {
-    background-color: #004d40;
-  }
-
-  #logout-button {
+#logout-button {
     padding: 10px;
     background-color: #dc3545;
     color: #fff;

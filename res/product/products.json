@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Jodła Kaukaska",
+    "price": "100 PLN",
+    "date": "01.01.2022",
+    "image": "res/shop/jodla_kaukaska.jpg",
+    "description": "Jodła kaukaska"
+  },
+  {
+    "id": 4,
+    "name": "Świerk Srebrny - Mały",
+    "price": "400 PLN",
+    "date": "20.07.2022",
+    "image": "res/shop/swierk_srebrny3.jpg",
+    "description": "Świerk Srebrny - Mały"
+  }
+]

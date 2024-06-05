@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Jodła Kaukaska",
+    "price": "100 PLN",
+    "date": "01.01.2022",
+    "image": "res/shop/jodla_kaukaska.jpg",
+    "description": "Jodła kaukaska"
+  },
+  {
+    "id": 2,
+    "name": "Świerk Srebrny - Średni",
+    "price": "200 PLN",
+    "date": "15.03.2022",
+    "image": "res/shop/swierk_srebrny.jpg",
+    "description": "Świerk Srebrny - Średni"
+  },
+  {
+    "id": 3,
+    "name": "Świerk Srebrny - Duży",
+    "price": "300 PLN",
+    "date": "10.05.2022",
+    "image": "res/shop/swierk_srebrny2.jpg",
+    "description": "Świerk Srebrny - Duży"
+  },
+  {
+    "id": 4,
+    "name": "Świerk Srebrny - Mały",
+    "price": "400 PLN",
+    "date": "20.07.2022",
+    "image": "res/shop/swierk_srebrny3.jpg",
+    "description": "Świerk Srebrny - Mały"
+  },
+  {
+    "id": 5,
+    "name": "Świerk Serbski",
+    "price": "500 PLN",
+    "date": "25.09.2022",
+    "image": "res/shop/swierk_serbski.jpg",
+    "description": "Świerk Serbski"
+  },
+  {
+    "id": 6,
+    "name": "Sosna",
+    "price": "600 PLN",
+    "date": "30.11.2022",
+    "image": "res/shop/sosna.jpg",
+    "description": "Sosna"
+  }
+]
