@@ -8,14 +8,6 @@
     "description": "Jodła kaukaska"
   },
   {
-    "id": 2,
-    "name": "Świerk Srebrny - Średni",
-    "price": "200 PLN",
-    "date": "15.03.2022",
-    "image": "res/shop/swierk_srebrny.jpg",
-    "description": "Świerk Srebrny - Średni"
-  },
-  {
     "id": 3,
     "name": "Świerk Srebrny - Duży",
     "price": "300 PLN",

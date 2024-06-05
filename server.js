@@ -1,7 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
-
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -38,4 +38,24 @@ app.post('/updateProducts', (req, res) => {
 // Start serwera
 app.listen(port, () => {
     console.log(`Serwer backendowy nasłuchuje na porcie ${port}`);
+});
+
+
+app.use(express.static(path.join(__dirname, 'res')));
+app.use(express.static(path.join(__dirname, 'forum')));
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/forum', (req, res) => {
+    res.sendFile(path.join(__dirname, 'forum/forum.html'));
+});
+
+app.get('/forum/thread', (req, res) => {
+    res.sendFile(path.join(__dirname, 'forum/thread.html'));
+});
+
+app.get('/forum/post', (req, res) => {
+    res.sendFile(path.join(__dirname, 'forum/post.html'));
 });
