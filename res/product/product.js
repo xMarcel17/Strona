@@ -99,6 +99,37 @@ document.addEventListener("DOMContentLoaded", function() {
                         const updatedProducts = products.slice();
                         updatedProducts.splice(productIndex, 1);
                         
+                        const purchasedTree = {
+                            id: product.id,
+                            name: product.name,
+                            price: product.price,
+                            date: product.date,
+                            pic: product.image
+                        };
+                        
+                        // Wysyłamy żądanie POST na serwer backendowy z zaktualizowaną listą produktów i zakupionym drzewem
+                        fetch('http://localhost:3000/purchase', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                updatedProducts: updatedProducts,
+                                purchasedTree: purchasedTree
+                            })
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Błąd podczas zakupu produktu');
+                            }
+                            // Jeśli zakup zakończył się sukcesem, usuwamy produkt z listy
+                            products.splice(productIndex, 1);
+                            alert("Produkt został zakupiony.");
+                            paymentDialog.style.display = "none";
+                            window.location.href = "shop.html";
+                        })
+                        .catch(error => console.error(error));
+                        
                         // Wysyłamy żądanie POST na serwer backendowy z zaktualizowaną listą produktów
                         fetch('http://localhost:3000/updateProducts', {
                             method: 'POST',
