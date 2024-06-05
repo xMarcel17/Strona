@@ -15,6 +15,44 @@ app.use((req, res, next) => {
     next();
 });
 
+app.post('/purchase', (req, res) => {
+    const { updatedProducts, purchasedTree } = req.body;
+
+    // Odczytaj aktualną zawartość pliku purchased_trees.json, jeśli istnieje
+    fs.readFile('res/points/purchased_trees.json', 'utf8', (err, fileData) => {
+        if (err) {
+            // Jeśli plik nie istnieje, utwórz nową listę zakupionych drzew
+            const purchasedTrees = [];
+            purchasedTrees.push(purchasedTree);
+
+            // Zapisz listę zakupionych drzew do pliku purchased_trees.json
+            fs.writeFile('res/points/purchased_trees.json', JSON.stringify({ trees: purchasedTrees }), 'utf8', (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('Błąd podczas zapisywania do pliku purchased_trees.json');
+                    return;
+                }
+                console.log('Pomyślnie dodano zakupione drzewo do purchased_trees.json');
+                res.status(200).send('Zakupiony produkt został zapisany');
+            });
+        } else {
+            // Jeśli plik istnieje, dodaj nowe zakupione drzewo do istniejącej listy
+            const purchasedTrees = JSON.parse(fileData).trees || [];
+            purchasedTrees.push(purchasedTree);
+
+            // Zapisz zaktualizowaną listę zakupionych drzew do pliku purchased_trees.json
+            fs.writeFile('res/points/purchased_trees.json', JSON.stringify({ trees: purchasedTrees }), 'utf8', (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('Błąd podczas zapisywania do pliku purchased_trees.json');
+                    return;
+                }
+                console.log('Pomyślnie dodano zakupione drzewo do purchased_trees.json');
+                res.status(200).send('Zakupiony produkt został zapisany');
+            });
+        }
+    });
+});
 
 // Endpoint do aktualizacji pliku products.json
 app.post('/updateProducts', (req, res) => {
