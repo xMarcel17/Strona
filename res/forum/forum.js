@@ -1,4 +1,6 @@
 // Funkcja do ładowania danych profilu z localStorage
+var username_temp;
+
 function loadProfileData() {
   const profileData = JSON.parse(localStorage.getItem('profileData')) || {
       firstName: 'Jan',
@@ -9,11 +11,10 @@ function loadProfileData() {
       card: '1234************23',
       address: 'ul. Grottgera 24/6'
   };
-
+  
+  username_temp = profileData.username;
   // Aktualizacja danych w navbarze
-  const navUsername = document.getElementById('nav_username');
-  navUsername.textContent = profileData.username;
-  navUsername.classList.add('nav-username'); // Dodajemy klasę CSS
+  document.getElementById('nav_username').textContent = profileData.username;
 }
 
 // Funkcja do zapisywania danych profilu do localStorage
@@ -35,6 +36,22 @@ function saveProfileData() {
 document.addEventListener("DOMContentLoaded", () => {
   loadProfileData();
 });
+
+
+
+
+function getCurrentUsername() {
+  // Tutaj możesz zaimplementować sposób pobierania nazwy użytkownika, np. z sesji lub lokalnego przechowywania
+  // Zakładając, że masz już funkcję do pobierania aktualnej nazwy użytkownika, zwróć ją tutaj
+  return username_temp; // Na potrzeby przykładu zwrócimy stałą nazwę
+}
+
+function getCurrentDateTime() {
+  const now = new Date();
+  const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  return now.toLocaleDateString('pl-PL', options);
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.includes('forum.html')) {
@@ -69,10 +86,12 @@ function loadThreads() {
 
   threads.forEach(thread => {
       const threadElement = document.createElement('div');
-      threadElement.classList.add('thread-item'); // Dodajemy klasę CSS
+      threadElement.classList.add('thread-item');
       threadElement.innerHTML = `
-          <a href="thread.html?threadId=${thread.id}" class="thread-link">${thread.title}</a>
-          <button class="delete-button" onclick="deleteThread(${thread.id})">Usuń</button>
+          <p class="thread-author">Autor: ${thread.username}</p>
+          <p class="thread-date">Data dodania: ${thread.datetime}</p>
+          <a href="thread.html?threadId=${thread.id}">${thread.title}</a>
+          <button onclick="deleteThread(${thread.id})">Usuń</button>
       `;
       forumThreads.appendChild(threadElement);
   });
@@ -84,9 +103,11 @@ function createThread() {
 
   const threads = JSON.parse(localStorage.getItem('threads')) || [];
   const newThread = {
-      id: Date.now(),
-      title: threadTitle,
-      posts: []
+    id: Date.now(),
+    title: threadTitle,
+    username: getCurrentUsername(),
+    datetime: getCurrentDateTime(),
+    posts: []
   };
   threads.push(newThread);
   localStorage.setItem('threads', JSON.stringify(threads));
@@ -118,15 +139,24 @@ function loadThread() {
 
   const forumPosts = document.getElementById('forum-posts');
   forumPosts.innerHTML = '';
+
   thread.posts.forEach(post => {
       const postElement = document.createElement('div');
-      postElement.classList.add('post-item'); // Dodajemy klasę CSS
+      postElement.classList.add('post-item');
       postElement.innerHTML = `
+          <p class="post-author">Autor: ${post.username}</p>
+          <p class="post-date">Data dodania: ${post.datetime}</p>
           <p>${post.content}</p>
-          <button class="delete-button" onclick="deletePost(${thread.id}, ${post.id})">Usuń</button>
+          <button onclick="deletePost(${thread.id}, ${post.id})">Usuń</button>
       `;
       forumPosts.appendChild(postElement);
   });
+
+  const newPostContainer = document.getElementById('new-post-container');
+  newPostContainer.innerHTML = `
+      <textarea id="new-post-content" class="new-post-content" placeholder="Wpisz swoją odpowiedź..."></textarea>
+      <button onclick="addPost()" class="btn">Dodaj odpowiedź</button>
+  `;
 }
 
 function addPost() {
@@ -136,16 +166,18 @@ function addPost() {
   const thread = threads.find(t => t.id == threadId);
 
   if (!thread) {
-      alert('Wątek nie znaleziony');
-      return;
+    alert('Wątek nie znaleziony');
+    return;
   }
 
   const newPostContent = document.getElementById('new-post-content').value;
   if (!newPostContent) return;
 
   const newPost = {
-      id: Date.now(),
-      content: newPostContent
+    id: Date.now(),
+    username: getCurrentUsername(),
+    datetime: getCurrentDateTime(),
+    content: newPostContent
   };
   thread.posts.push(newPost);
   localStorage.setItem('threads', JSON.stringify(threads));

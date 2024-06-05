@@ -72,6 +72,7 @@ body {
   width: 600px;
   overflow: hidden;
   margin: 20px auto;
+  padding: 20px
 }
 
 /* Forum Threads */
@@ -153,3 +154,27 @@ button {
 button {
     background-color: #004d40;
 }
+
+.thread-author {
+  font-style: italic;
+}
+
+.thread-date {
+  color: #888;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-date {
+  color: #777;
+}
+
+#new-post-content {
+  margin-top: 10px;
+  width: 100%;
+  height: 150px; /* Zwiększamy wysokość pola */
+  margin-bottom: 10px; /* Obniżamy odstęp od przycisku */
+}
+

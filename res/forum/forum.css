@@ -154,3 +154,19 @@ button {
 button {
     background-color: #004d40;
 }
+
+.thread-author {
+  font-style: italic;
+}
+
+.thread-date {
+  color: #888;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-date {
+  color: #777;
+}
